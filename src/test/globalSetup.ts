@@ -7,6 +7,8 @@ export async function setup(): Promise<void> {
   container = await new PostgreSqlContainer("postgres:16-alpine").start();
   const uri = container.getConnectionUri();
   process.env.DATABASE_URL = uri;
+  process.env.BETTER_AUTH_SECRET = "test-secret-at-least-32-characters-long-for-hmac";
+  process.env.BETTER_AUTH_URL = "http://localhost:3000";
 
   try {
     execSync("npx drizzle-kit migrate", {

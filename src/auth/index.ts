@@ -29,7 +29,7 @@ function createAuth() {
         sendMagicLink: async ({ email, url }) => {
           if (!isAcceptedDomain(email)) {
             throw new APIError("BAD_REQUEST", {
-              message: `Only @${getAcceptedEmailDomain()} email addresses are accepted. Please use your university email.`,
+              message: `Use your university email address — it has to end in ${getAcceptedEmailDomain()}.`,
             });
           }
           await emailSender.sendMagicLink(email, url);

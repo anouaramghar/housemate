@@ -1,0 +1,268 @@
+:root {
+  --paper: #e8ecf1;
+  --surface: #ffffff;
+  --ink: #14181f;
+  --ink-soft: #58616f;
+  --rule: #c6cfda;
+  /* Reserved for the open slot. It appears nowhere else. */
+  --signal: #c96f1e;
+
+  --step-0: 1rem;
+  --step-1: 1.125rem;
+  --step-2: clamp(1.95rem, 1.35rem + 2.1vw, 2.85rem);
+
+  --measure: 38rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #12161c;
+    --surface: #191e26;
+    --ink: #e8ecf1;
+    --ink-soft: #949fae;
+    --rule: #2c333d;
+    --signal: #e9a45c;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: var(--step-0);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+.panel {
+  width: 100%;
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+/* ---- signature: the open slot ---------------------------------------- */
+
+.slots {
+  display: flex;
+  gap: clamp(0.7rem, 1.6vw, 1.15rem);
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.slot {
+  width: clamp(1.9rem, 4.4vw, 2.75rem);
+  height: clamp(1.9rem, 4.4vw, 2.75rem);
+  border-radius: 50%;
+  background: var(--ink);
+  animation: slot-in 0.5s cubic-bezier(0.2, 0.8, 0.3, 1) backwards;
+}
+
+.slot:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.slot:nth-child(2) {
+  animation-delay: 0.13s;
+}
+.slot:nth-child(3) {
+  animation-delay: 0.21s;
+}
+
+.slot--open {
+  background: transparent;
+  border: 3px solid var(--signal);
+  animation-delay: 0.36s;
+  position: relative;
+}
+
+.slot--open::after {
+  content: "";
+  position: absolute;
+  inset: -0.55rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--signal);
+  opacity: 0;
+  animation: slot-halo 2.6s ease-out 1s infinite;
+}
+
+@keyframes slot-in {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slot-halo {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.82);
+  }
+  55%,
+  100% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+}
+
+.caption {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 2.4rem;
+}
+
+/* ---- type ------------------------------------------------------------ */
+
+h1 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--step-2);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.1rem;
+  text-wrap: balance;
+}
+
+h1 .after {
+  color: var(--ink-soft);
+  display: block;
+}
+
+.lede {
+  font-size: var(--step-1);
+  color: var(--ink-soft);
+  margin: 0 0 2.6rem;
+  max-width: 30rem;
+  text-wrap: pretty;
+}
+
+/* ---- form ------------------------------------------------------------ */
+
+form,
+.sent {
+  max-width: 25rem;
+}
+
+.field {
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.45rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 0.4rem;
+}
+
+.input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.7;
+}
+
+.input:focus-visible,
+.button:focus-visible,
+.link:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.85rem 1.4rem;
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: progress;
+}
+
+.help {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 1rem 0 0;
+}
+
+.error {
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--signal);
+  border-radius: 0.3rem;
+  padding: 0.75rem 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.sent {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.6rem;
+}
+
+.link {
+  color: var(--ink);
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.data {
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

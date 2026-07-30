@@ -1,9 +1,9 @@
 import { describe, it, expect } from "vitest";
-import Home from "@/app/page";
+import Health from "@/app/health/page";
 
-describe("Home server component", () => {
+describe("Health server component", () => {
   it("reads through the same service layer the API route uses", async () => {
-    const element = await Home();
+    const element = await Health();
     const body = element.props.children;
 
     expect(typeof body).toBe("string");

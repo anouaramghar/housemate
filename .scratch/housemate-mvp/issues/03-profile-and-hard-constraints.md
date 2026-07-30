@@ -13,14 +13,14 @@ nobody can be matched against.
 
 **Blocked by:** 02 — Verify with a campus email.
 
-**Status:** ready-for-agent
+**Status:** done — `f20cf7e`, `cb7bb7d`
 
-- [ ] A Person sets housing status to `has a place` or `needs a place`, and can change it later
-- [ ] Budget range, areas, move-in date and tenancy length are captured and validated with one shared
+- [x] A Person sets housing status to `has a place` or `needs a place`, and can change it later
+- [x] Budget range, areas, move-in date and tenancy length are captured and validated with one shared
       Zod schema used by both the API and the form
-- [ ] A free-text self-description is captured and stored verbatim
-- [ ] Every field is editable at any time, and edits take effect immediately
-- [ ] A paused profile is invisible to everyone else and reversible without data loss
-- [ ] A Person controls which details are public before a match, and the API never returns more than
+- [x] A free-text self-description is captured and stored verbatim
+- [x] Every field is editable at any time, and edits take effect immediately
+- [x] A paused profile is invisible to everyone else and reversible without data loss
+- [x] A Person controls which details are public before a match, and the API never returns more than
       the viewer is entitled to
-- [ ] Nothing in this ticket exposes an email address
+- [x] Nothing in this ticket exposes an email address

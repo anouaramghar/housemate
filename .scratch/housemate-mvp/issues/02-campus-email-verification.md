@@ -13,14 +13,14 @@ country.
 
 **Blocked by:** 01 — Walking skeleton.
 
-**Status:** ready-for-agent
+**Status:** done — `78ae568`, `3147f44`
 
-- [ ] Requesting a link with an accepted campus domain sends one; the address is validated server-side
-- [ ] Requesting a link with any other domain is refused, with a message naming the campus requirement
-- [ ] Clicking a valid link creates a session and marks the Person verified
-- [ ] An expired or already-used link is refused and can be re-requested
-- [ ] An unverified or anonymous request to any non-public route is refused — tested by name, since
+- [x] Requesting a link with an accepted campus domain sends one; the address is validated server-side
+- [x] Requesting a link with any other domain is refused, with a message naming the campus requirement
+- [x] Clicking a valid link creates a session and marks the Person verified
+- [x] An expired or already-used link is refused and can be re-requested
+- [x] An unverified or anonymous request to any non-public route is refused — tested by name, since
       "an unverified person sees nothing" is the module's owned rule
-- [ ] The email address is never returned by any API response or rendered on any surface
-- [ ] Verification persists across the season; returning does not re-verify
-- [ ] The accepted domain is configuration, changeable without touching application code
+- [x] The email address is never returned by any API response or rendered on any surface
+- [x] Verification persists across the season; returning does not re-verify
+- [x] The accepted domain is configuration, changeable without touching application code

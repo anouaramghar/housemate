@@ -1,5 +1,6 @@
 import {
   boolean,
+  integer,
   pgTable,
   serial,
   text,
@@ -8,6 +9,9 @@ import {
   uuid,
   varchar,
 } from "drizzle-orm/pg-core";
+
+export const housingStatusValues = ["has a place", "needs a place"] as const;
+export type HousingStatus = (typeof housingStatusValues)[number];
 
 export const healthCheck = pgTable("health_check", {
   id: serial("id").primaryKey(),
@@ -75,6 +79,15 @@ export const person = pgTable(
     userId: text("user_id")
       .notNull()
       .references(() => user.id, { onDelete: "cascade" }),
+    housingStatus: text("housing_status"),
+    budgetMin: integer("budget_min"),
+    budgetMax: integer("budget_max"),
+    areas: text("areas").array(),
+    moveInDate: text("move_in_date"),
+    tenancyLengthMonths: integer("tenancy_length_months"),
+    selfDescription: text("self_description"),
+    profilePaused: boolean("profile_paused").notNull().default(false),
+    publicFields: text("public_fields").array(),
     createdAt: timestamp("created_at").notNull().defaultNow(),
     updatedAt: timestamp("updated_at").notNull().defaultNow(),
   },

@@ -15,6 +15,13 @@
       "when": 1785443207992,
       "tag": "0001_adorable_lila_cheney",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1785445632517,
+      "tag": "0002_profile_columns",
+      "breakpoints": true
     }
   ]
 }

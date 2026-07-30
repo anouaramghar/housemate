@@ -1,8 +1,13 @@
 # Reputation abuse — fake and retaliatory reviews
 
 Type: grilling
-Status: open
+Status: deferred
 Blocked by: 05
+
+> **Deferred to year three by
+> [Does year-one differentiation rest on reputation, or on group formation?](13-differentiator-recheck.md).**
+> There are no reviews in the MVP, so there is no review abuse surface to defend. Out of scope, not
+> resolved.
 Parent: [Student Housemate Marketplace](../map.md)
 
 ## Question

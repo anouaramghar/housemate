@@ -8,6 +8,39 @@ Parent: [Student Housemate Marketplace](../map.md)
 _Raised by [Legal basis for the gender preference filter](02-fair-housing-gender-filter.md). This
 ticket partially reopens **constraint 3**._
 
+> **Jurisdiction now fixed.** [Ticket 06](06-campus-and-partnership.md) locked the launch country to
+> the **UK**. Answer the three questions below against **Equality Act Sch. 5 para. 3 alone** — not
+> against the multi-jurisdiction matrix the question was originally written for. Three consequences:
+> the sub-question in part 3 about a *"single global gender field"* is deferred, not live; the
+> US §3604(c) advertising hazard and the EU mirror-image hazard both fall out of scope for launch;
+> and the two regimes named in the spec are now **sheltered versus unsheltered under one statute**,
+> which is a materially smaller design than two jurisdictions. The parts of this ticket that survive —
+> hard filter versus soft signal, structured field versus free text, and what the field contains —
+> are the parts that were never jurisdictional. They remain open.
+
+> **Question 1 is now answered: hard filter *or* soft signal, selected by regime.**
+>
+> - **Sheltered** (a member already resides in the property) → **hard filter permitted**. Excluded
+>   people disappear from the browse. This is the right the statute grants the person who resides.
+> - **Unsheltered** (household formed from scratch, nobody residing) → **soft signal only**. People
+>   rank lower but stay visible. No exemption shelters an exclusion here.
+>
+> Two consequences worth carrying into the remaining design work:
+>
+> - **The most differentiated half of the product has the weakest control.** The scratch-formed group
+>   — the thing nobody else does — gets only ranking, while the spare room at someone's flat, which
+>   exists on every competing site, gets the full filter.
+> - **The sharpest objection comes from the users who care most.** A woman who will only live with
+>   women finds a soft signal broken: she does not want a man ranked seventh, she wants him absent.
+>   In the unsheltered regime the product cannot give her that. This is accepted, not overlooked, and
+>   it is a plausible cause of early churn among exactly the users the product most needs.
+>
+> **Still open:** structured field versus free text (question 2), and what the field contains
+> (question 3, minus its deferred multi-jurisdiction half). Note that question 2's original argument
+> rested on **§230**, which does not exist in the UK — the general principle that platform-authored
+> questions are platform speech still holds, but the specific legal mechanism does not transfer and
+> needs the lawyer's opinion rather than inheritance from the US research.
+
 ## Question
 
 Charting decided *that* users can express a gender preference (constraint 10) and put it on the

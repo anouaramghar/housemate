@@ -1,8 +1,14 @@
 # Reputation rules — who reviews whom, and when
 
 Type: grilling
-Status: open
+Status: deferred
 Blocked by: —
+
+> **Deferred to year three by
+> [Does year-one differentiation rest on reputation, or on group formation?](13-differentiator-recheck.md).**
+> Reputation is out of the MVP, so nothing below needs answering to build. The question is unchanged
+> and unanswered — it is out of scope, not resolved. Household lifecycle events are recorded from day
+> one so this ticket can be picked up against real history rather than from zero.
 Parent: [Student Housemate Marketplace](../map.md)
 
 ## Question

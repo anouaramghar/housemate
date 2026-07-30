@@ -14,14 +14,14 @@ version to latest stable at scaffold time.
 
 **Blocked by:** None — can start immediately.
 
-**Status:** ready-for-agent
+**Status:** done — `5e916bd`
 
-- [ ] `GET /api/health` returns 200 with a body proving it reached Postgres
-- [ ] A Vitest test drives that route via the Hono app in-process — no server boot, no HTTP port
-- [ ] Postgres comes from Testcontainers; the suite creates and tears down its own database
-- [ ] Migrations run from a single command and are applied automatically before the suite
-- [ ] A service layer exists between routes and Drizzle, and the route calls it rather than the ORM
-- [ ] A Server Component reads through that same service layer, proving both entry points share it
-- [ ] The suite runs green from a clean checkout with one documented command
-- [ ] `README` records the three non-optional constraints: no Server Actions for mutations, Server
+- [x] `GET /api/health` returns 200 with a body proving it reached Postgres
+- [x] A Vitest test drives that route via the Hono app in-process — no server boot, no HTTP port
+- [x] Postgres comes from Testcontainers; the suite creates and tears down its own database
+- [x] Migrations run from a single command and are applied automatically before the suite
+- [x] A service layer exists between routes and Drizzle, and the route calls it rather than the ORM
+- [x] A Server Component reads through that same service layer, proving both entry points share it
+- [x] The suite runs green from a clean checkout with one documented command
+- [x] `README` records the three non-optional constraints: no Server Actions for mutations, Server
       Components read through the service layer, `household_events` append-only and transactional
